@@ -2116,6 +2116,10 @@ label {
     font-size: 48px;
 }
 
+.cs_section_heading h3{
+    font-weight: 700;
+}
+
 .cs_section_heading.cs_style_1.cs_type_2 .cs_section_heading_right {
     flex: 1;
     text-align: right;
@@ -3790,9 +3794,9 @@ input:-webkit-autofill {
 }
 
 
-.activo {
+.cs_nav_list li .activo {
     font-weight: 700;
-    color: var(--gray-500);
+    color: #161616; /* TODO */
 }
 
 .cs_nav_list .btn.btn_primary {
@@ -5182,7 +5186,6 @@ input:-webkit-autofill {
 
 
 .cs_hero.cs_style2 {
-    min-height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
