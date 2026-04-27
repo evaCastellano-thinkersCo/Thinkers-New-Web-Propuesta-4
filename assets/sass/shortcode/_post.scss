@@ -1,0 +1,93 @@
+/*--------------------------------------------------------------
+  15. Posts
+----------------------------------------------------------------*/
+
+.cs_post.cs_style_1 {
+  .cs_post_thumb {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+  .cs_post_title {
+    font-size: 22px;
+  }
+  .cs_post_thumb {
+    margin-bottom: 30px;
+  }
+  .cs_post_info {
+    padding-left: 15px;
+  }
+}
+
+.cs_featured_cases_grid {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.cs_featured_case_item {
+  flex: 1 1 0;
+  min-width: 0;
+  .cs_featured_case_link {
+    display: block;
+    height: 100%;
+    color: inherit;
+  }
+  .cs_post_thumb {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+.casos-html .cs_featured_case_item {
+  flex: 0 0 calc((100% - 32px) / 3);
+  .cs_featured_case_link {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .casos-html .cs_featured_case_item {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+.cs_post.cs_style_2 {
+  display: block;
+  .cs_post_info {
+    background-color: $black;
+    padding-left: 50px;
+    padding-top: 60px;
+    padding-right: 52px;
+    .cs_post_title {
+      color: $white;
+    }
+    p {
+      color: $border;
+      font-size: 16px;
+    }
+    .cs_section_heading_right {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cs_featured_cases_grid {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 575px) {
+}
+
+@media screen and (max-width: 350px) {
+}
