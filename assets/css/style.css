@@ -8535,7 +8535,7 @@ a:hover {
 }
 
 .aliados .cs_featured_cases_grid {
-    margin: 0 auto;
+    justify-content: center;
 }
 
 .aliados .cs_post_thumb {
@@ -8568,7 +8568,7 @@ a:hover {
 }
 
 .aliados .cs_post {
-    width: 200px;
+    width: 220px;
     height: 100px;
 }
 
