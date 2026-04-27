@@ -2061,7 +2061,7 @@ label {
 }
 
 .cs_section_heading.cs_style_1 .cs_section_title_3 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 48px;
 }
 
@@ -2106,15 +2106,17 @@ label {
     max-width: 100%;
 }
 
-.cs_section_heading_text h2,
-.cs_section_heading_text p {
+.bg_accent .cs_section_heading_text h2,
+.bg_accent .cs_section_heading_text p {
     margin: 0;
     color: var(--common-color-black);
 }
 
-.cs_section_heading_text h2 {
+.bg_accent .cs_section_heading_text h2 {
     font-size: 48px;
+    font-weight: 600;
 }
+
 
 .cs_section_heading h3{
     font-weight: 700;
@@ -3796,7 +3798,18 @@ input:-webkit-autofill {
 
 .cs_nav_list li .activo {
     font-weight: 700;
-    color: #161616; /* TODO */
+    color: #161616 !important;
+}
+.cs_nav_list li .activo:hover {
+    color: var(--accent-color) !important;
+}
+
+.cs_main_header_right .cs_nav .cs_nav_list li a:hover{
+    color: var(--accent-color);
+}
+
+.cs_main_header_right .cs_nav .cs_nav_list li .btn:hover{
+    color: #F7F7F7;
 }
 
 .cs_nav_list .btn.btn_primary {
@@ -6525,21 +6538,21 @@ a:hover {
 
 }
 
-.cs_featured_cases_grid .cs_featured_case_item:first-child {
+.ejes-actuacion .cs_featured_cases_grid .cs_featured_case_item:first-child {
     background-color: var(--accent-color);
     color: var(--common-color-black);
 }
 
-.cs_featured_cases_grid .cs_featured_case_item:nth-child(2) {
+.ejes-actuacion .cs_featured_cases_grid .cs_featured_case_item:nth-child(2) {
     background-color: #EBEBEB;
     color: var(--common-color-black);
 }
 
-.cs_featured_cases_grid .cs_featured_case_item {
+.ejes-actuacion .cs_featured_cases_grid .cs_featured_case_item {
     background-color: #fff;
 }
 
-.cs_featured_case_item:hover {
+.ejes-actuacion .cs_featured_case_item:hover {
     box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.2);
     transition: all linear 0.2s;
 }
@@ -8494,5 +8507,45 @@ a:hover {
     }
 }
 
+/* Seccion naranja */
+
+.bg_accent .cs_section_heading_text p{
+    font-weight: 300;
+}
+
+/* Aliados */
+
+/* .container.aliados{
+} */
+
+.aliados .cs_section_heading_text h2{
+    font-weight: 200;
+    text-align: center;
+}
+
+.aliados .cs_section_heading .cs_section_heading_text{
+    text-align: center;
+}
+
+.aliados .cs_post_thumb{
+    display: flex;
+    align-items: center !important;
+}
+
+.aliados .cs_post {
+    background-color: #fff;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: center;
+    width: 257px;
+    height: 80px;
+}
+
+.aliados .cs_post {
+    background-color: #fff;
+    padding: 20px 28px;
+    width: 257px;
+    height: 80px;
+}
 
 /*# sourceMappingURL=style.css.map */
