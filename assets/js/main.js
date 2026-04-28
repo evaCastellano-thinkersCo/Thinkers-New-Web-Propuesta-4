@@ -85,24 +85,39 @@
                                                                                                                                             2. Mobile Menu
                                                                                                                                            --------------------------------------------------------------*/
   function mainNav() {
-    $(".cs_nav").append('<span class="cs_munu_toggle"><span></span></span>');
-    $(".menu-item-has-children").append(
-      '<span class="cs_munu_dropdown_toggle"></span>'
-    );
+    $(".cs_nav").each(function () {
+      if (!$(this).children(".cs_munu_toggle").length) {
+        $(this).append('<span class="cs_munu_toggle"><span></span></span>');
+      }
+    });
+
+    $(".menu-item-has-children").each(function () {
+      if (!$(this).children(".cs_munu_dropdown_toggle").length) {
+        $(this).append('<span class="cs_munu_dropdown_toggle"></span>');
+      }
+    });
+
     $(".cs_munu_toggle").on("click", function () {
-      $(this)
-        .toggleClass("cs_toggle_active")
-        .siblings(".cs_nav_list")
-        .slideToggle();
+      var $toggle = $(this);
+      var $navList = $toggle.siblings(".cs_nav_list");
+
+      $toggle.toggleClass("cs_toggle_active");
+      $navList.stop(true, true).slideToggle(200, function () {
+        if (window.innerWidth <= 991 && $navList.is(":visible")) {
+          $navList.css("display", "flex");
+        }
+      });
     });
     $(".cs_munu_dropdown_toggle").on("click", function () {
       $(this).toggleClass("active").siblings("ul").slideToggle();
       $(this).parent().toggleClass("active");
     });
 
-    $(".menu-item-has-black-section").append(
-      '<span class="cs_munu_dropdown_toggle_1"></span>'
-    );
+    $(".menu-item-has-black-section").each(function () {
+      if (!$(this).children(".cs_munu_dropdown_toggle_1").length) {
+        $(this).append('<span class="cs_munu_dropdown_toggle_1"></span>');
+      }
+    });
 
     $(".cs_munu_dropdown_toggle_1").on("click", function () {
       $(this).toggleClass("active").siblings("ul").slideToggle();
@@ -124,6 +139,47 @@
     $(".cs_animo_links > li > a").each(function () {
       let xxx = $(this).html().split("").join("</span><span>");
       $(this).html(`<span class="cs_animo_text"><span>${xxx}</span></span>`);
+    });
+
+    syncActiveNavState();
+    syncResponsiveNavState();
+
+    $(window).on("resize", function () {
+      syncResponsiveNavState();
+    });
+  }
+
+  function syncActiveNavState() {
+    $(".cs_nav_list li").removeClass("current-menu-item current-menu-ancestor");
+
+    $(".cs_nav_list a.activo").each(function () {
+      var $link = $(this);
+      var $item = $link.closest("li");
+
+      $item.addClass("current-menu-item");
+      $item.parents("li").addClass("current-menu-ancestor");
+    });
+  }
+
+  function syncResponsiveNavState() {
+    var isMobileNav = window.innerWidth <= 991;
+
+    $(".cs_nav").each(function () {
+      var $nav = $(this);
+      var $toggle = $nav.children(".cs_munu_toggle");
+      var $navList = $nav.children(".cs_nav_list");
+
+      if (isMobileNav) {
+        if (!$toggle.hasClass("cs_toggle_active")) {
+          $navList.stop(true, true).hide();
+        }
+      } else {
+        $toggle.removeClass("cs_toggle_active");
+        $navList.removeAttr("style");
+        $nav.find(".cs_munu_dropdown_toggle").removeClass("active");
+        $nav.find(".menu-item-has-children").removeClass("active");
+        $nav.find(".menu-item-has-children > ul").removeAttr("style");
+      }
     });
   }
 
