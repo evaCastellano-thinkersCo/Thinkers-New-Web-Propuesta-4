@@ -59,6 +59,7 @@
   $(function () {
     $(window).trigger("resize");
     mainNav();
+    initContactForm();
     stickyHeader();
     dynamicBackground();
     swiperInit();
@@ -79,6 +80,96 @@
   function preloader() {
     $(".cs_preloader_in").fadeOut();
     $(".cs_preloader").delay(150).fadeOut("slow");
+  }
+
+/* FORMULARIO */
+
+  function initContactForm() {
+    var form = document.getElementById("contact-form");
+    var submitButton = document.getElementById("contact-submit");
+    var status = document.getElementById("estado");
+
+    if (!form || !submitButton || !status) {
+      return;
+    }
+
+    var requiredFields = form.querySelectorAll("input[required]");
+    var formUrl =
+      "https://script.google.com/macros/s/AKfycbySSHnOG7y2uHbBXhCHNWxaIXZY-O8qtL1CRzvEmb4NaxQf_mdzio_74eqx_X3_6fm7jA/exec";
+
+    function isFieldCompleted(field) {
+      if (field.type === "checkbox") {
+        return field.checked;
+      }
+
+      return field.value.trim() !== "" && field.checkValidity();
+    }
+
+    function updateSubmitState() {
+      var isFormComplete = Array.from(requiredFields).every(isFieldCompleted);
+      submitButton.disabled = !isFormComplete;
+    }
+
+    requiredFields.forEach(function (field) {
+      field.addEventListener("input", updateSubmitState);
+      field.addEventListener("change", updateSubmitState);
+    });
+
+    updateSubmitState();
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      var nombre = form.nombre ? form.nombre.value : "";
+      var asunto = form.asunto ? form.asunto.value : "";
+      var mensaje = form.mensaje ? form.mensaje.value : "";
+
+      if (mensaje.trim().length <= 5) {
+        status.classList.add("error");
+        status.innerText = "Error: El mensaje debe tener al menos 5 caracteres";
+        return;
+      }
+
+      var regex = /[<>]/;
+
+      if (regex.test(nombre) || regex.test(asunto) || regex.test(mensaje)) {
+        status.classList.add("error");
+        status.innerText = "Error: no se pueden introducir los símbolos < o >";
+        return;
+      }
+
+      status.classList.remove("error");
+      status.innerText = "Enviando...";
+
+      var formData = new FormData(form);
+
+      try {
+        var res = await fetch(formUrl, {
+          method: "POST",
+          body: formData,
+        });
+
+        var text = await res.text();
+
+        if (text === "OK") {
+          status.classList.remove("error");
+          status.innerText = "Mensaje enviado correctamente";
+          form.reset();
+          updateSubmitState();
+
+          setTimeout(function () {
+            status.innerText = "";
+          }, 60000);
+        } else {
+          status.classList.add("error");
+          status.innerText = "Error al enviar";
+        }
+      } catch (err) {
+        status.classList.add("error");
+        status.innerText = "Error de conexión";
+        console.error(err);
+      }
+    });
   }
 
   /*--------------------------------------------------------------

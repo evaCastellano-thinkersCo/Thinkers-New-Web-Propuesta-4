@@ -86,8 +86,16 @@
     --gray-200-traslucido: #EBEBEB80;
     --gray-400-traslucido: #78787880;
 
+    --orange-00: #FFEAE1;
+    --orange-100: #FFD0BF;
+    --orange-200: #FEA387;
+    --orange-300: #FD6431;
+    --orange-400: #D85122;
+    --orange-500: #AD411D;
+    --orange-600: #812F14;
+
     /* botones */
-    --default-btn-primary: #F79837;
+    --default-btn-primary: var(--accent-color);
     --hover-btn-primary: #D97A1E;
     --active-btn-primary: #A65C15;
     --disabled-btn-primary: #C4CBD6;
@@ -113,7 +121,7 @@
 .dark {
     --drak-color: #131416;
     --cr_banner-color: #131416;
-    --accent-color: #F79837;
+    --accent-color: var(--accent-color);
     /* parrafos */
     --body-color: #E6EAF0;
     /* títulos */
@@ -154,8 +162,7 @@
 }
 
 .bg_accent {
-    background-color: var(--accent-color);
-    padding: 0 80px;
+    background-color: var(--accent-color) !important;
 }
 
 /* color de texto */
@@ -535,6 +542,10 @@ textarea {
 
     .cs_height_20 {
         height: 20px;
+    }
+
+    .cs_height_24 {
+        height: 24px;
     }
 
     .cs_height_25 {
@@ -2107,18 +2118,6 @@ label {
 .cs_section_heading.cs_style_1.cs_type_2 .cs_section_heading_text {
     max-width: 100%;
 }
-
-.bg_accent .cs_section_heading_text h3,
-.bg_accent .cs_section_heading_text p {
-    margin: 0;
-    color: var(--common-color-black);
-}
-
-.bg_accent .cs_section_heading_text h3 {
-    font-size: 48px;
-    font-weight: 600;
-}
-
 
 .cs_section_heading h3 {
     font-weight: 700;
@@ -8614,22 +8613,37 @@ a:hover {
 }
 
 /* Seccion naranja */
+.seccion-naranja {
+    background-color: var(--accent-color);
+    padding: 0 80px;
+}
 
-.bg_accent .cs_section_heading_text p {
+.seccion-naranja .cs_section_heading_text p {
     font-weight: 300;
 }
 
-.bg_accent .col-md-3.col-sm-12 {
+.seccion-naranja .col-md-3.col-sm-12 {
     padding-right: 50px;
     line-height: 100%;
 }
 
-.bg_accent .cs_section_heading.cs_style_1 .cs_section_title_3 {
+.seccion-naranja .cs_section_heading.cs_style_1 .cs_section_title_3 {
     padding: 0;
 }
 
-.bg_accent h2 {
+.seccion-naranja h2 {
     margin: 0 0 6px;
+}
+
+.seccion-naranja .cs_section_heading_text h3,
+.seccion-naranja .cs_section_heading_text p {
+    margin: 0;
+    color: var(--common-color-black);
+}
+
+.seccion-naranja .cs_section_heading_text h3 {
+    font-size: 48px;
+    font-weight: 600;
 }
 
 /* Aliados */
@@ -8717,6 +8731,10 @@ a:hover {
     background-color: #fff;
 }
 
+.insights .cs_post.bg_accent{
+    background-color: var(--accent-color);
+}
+
 .insights h2 {
     font-size: 48px;
     font-weight: 600;
@@ -8791,6 +8809,7 @@ a:hover {
 
 .contactar {
     gap: 16px;
+    padding: 120px 250px;
 }
 
 .contactar .col-md-6.col-sm-12 {
@@ -8854,7 +8873,7 @@ PLACEHOLDER -> FOCUS
 }
 
 
-LINEA
+LINEA E INPUT
 
 .cs_field_group .cs_input_field {
     width: 100%;
@@ -8869,23 +8888,66 @@ LINEA
 }
 */
 
+.contactar .cs_field_group {
+    padding-top: 28px;
+}
+
 .contactar .cs_field_group .cs_input_label {
     text-transform: capitalize;
     font-size: 18px;
     color: var(--gray-300);
+    padding: 0 8px;
+    font-weight: 400;
 }
 
-.contactar .cs_field_group .cs_input_field:focus~.cs_input_label {
+.contactar .cs_field_group .cs_input_field:focus~.cs_input_label,
+.contactar .cs_field_group .cs_input_field:not(:placeholder-shown)~.cs_input_label {
     font-size: 12px;
     color: var(--gray-400);
+    font-weight: 500;
 }
 
 .contactar .cs_field_group .cs_input_field {
     font-size: 18px;
     color: var(--common-color-black);
+    height: 28px;
+    padding-left: 8px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--common-color-black);
+}
+
+.contactar .cs_field_group .cs_input_field:focus {
+    border-color: var(--accent-color);
 }
 
 .contactar button {
     width: 100%;
     margin: 40px 0 0 0;
+}
+
+.contactar .checkbox input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin: 2px 10px 0 8px;
+    background-color: #fff;
+    border: 1px solid var(--common-color-black);
+    border-radius: 0;
+    accent-color: initial;
+    transition: none;
+}
+
+.contactar .checkbox input:checked {
+    background-color: var(--accent-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 8.5l3 3 7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+}
+
+.contactar .checkbox input:hover,
+.contactar .checkbox input:checked:hover{
+    background-color: var(--orange-100);
 }
