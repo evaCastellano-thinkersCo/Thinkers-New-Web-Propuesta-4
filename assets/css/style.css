@@ -8814,7 +8814,6 @@ a:hover {
 
 .contactar .col-md-6.col-sm-12 {
     width: calc(50% - 8px);
-    flex: 0 0 calc(50% - 8px);
 }
 
 .contactar .texto {
@@ -8842,52 +8841,6 @@ a:hover {
     padding: 24px 24px 0;
 }
 
-/* 
-
-PLACEHOLDER
-
-.cs_field_group .cs_input_label {
-    display: block;
-    position: absolute;
-    top: 0;
-    margin: 0;
-    font-size: 1em;
-    color: var(--body-color);
-    text-transform: uppercase;
-    transition: 0.3s ease;
-}
-
-PLACEHOLDER -> FOCUS
-
-.cs_field_group .cs_input_field:focus {
-    border-color: var(--accent-color);
-    border-image-slice: 1;
-}
-
-.cs_field_group .cs_input_field:focus~.cs_input_label {
-    display: block;
-    position: absolute;
-    top: 0;
-    font-size: 18px;
-    color: var(--accent-color);
-}
-
-
-LINEA E INPUT
-
-.cs_field_group .cs_input_field {
-    width: 100%;
-    outline: none;
-    border: 0;
-    border-bottom: 2px solid var(--body-color);
-    padding: 5px 0px;
-    background: transparent;
-    font-size: 18px;
-    color: var(--body-color);
-    transition: 0.3s ease;
-}
-*/
-
 .contactar .cs_field_group {
     padding-top: 28px;
 }
@@ -8913,7 +8866,11 @@ LINEA E INPUT
     height: 28px;
     padding-left: 8px;
     font-weight: 500;
-    border-bottom: 2px solid var(--common-color-black);
+    border-bottom: 2px solid var(--gray-300);
+}
+
+.contactar .cs_field_group .cs_input_field:not(:placeholder-shown) {
+border-color: var(--common-color-black);
 }
 
 .contactar .cs_field_group .cs_input_field:focus {
