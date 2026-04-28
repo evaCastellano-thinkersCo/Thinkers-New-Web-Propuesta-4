@@ -267,16 +267,40 @@
       });
     }
     if ($.exists(".cs_slider_3")) {
-      var swiper = new Swiper(".cs_slider_3", {
-        loop: true,
-        speed: 1000,
-        autoplay: false,
-        slidesPerView: "auto",
-        spaceBetween: 30,
-        pagination: {
-          el: ".cs_pagination",
-          clickable: true,
-        },
+      $(".cs_slider_3").each(function () {
+        var $slider = $(this);
+        var $wrapper = $slider.find(".swiper-wrapper").first();
+        var $originalSlides = $wrapper.children(".swiper-slide").slice();
+
+        // Prevent empty/invisible gaps at the loop seam when there are few cards.
+        if ($slider.hasClass("anim_blog") && $originalSlides.length && $originalSlides.length < 9) {
+          while ($wrapper.children(".swiper-slide").length < 9) {
+            $originalSlides.each(function () {
+              if ($wrapper.children(".swiper-slide").length < 9) {
+                $wrapper.append($(this).clone());
+              }
+            });
+          }
+        }
+
+        var isBlogSlider = $slider.hasClass("anim_blog");
+
+        var swiper = new Swiper(this, {
+          loop: true,
+          speed: 1000,
+          autoplay: false,
+          slidesPerView: "auto",
+          spaceBetween: 30,
+          loopAdditionalSlides: isBlogSlider ? 9 : 3,
+          loopedSlides: isBlogSlider ? 9 : undefined,
+          watchSlidesProgress: true,
+          observer: true,
+          observeParents: true,
+          pagination: {
+            el: ".cs_pagination",
+            clickable: true,
+          },
+        });
       });
     }
     if ($.exists(".cs_slider_4")) {
@@ -329,6 +353,46 @@
           el: ".cs_pagination",
           clickable: true,
         },
+      });
+    }
+    if ($.exists(".insights_drag_slider")) {
+      $(".insights_drag_slider").each(function () {
+        var $slider = $(this);
+        var $wrapper = $slider.find(".swiper-wrapper").first();
+        var $originalSlides = $wrapper.children(".swiper-slide").slice();
+
+        // Add enough real slides so the loop never shows empty gaps with short datasets.
+        if ($originalSlides.length && $originalSlides.length < 8) {
+          while ($wrapper.children(".swiper-slide").length < 8) {
+            $originalSlides.each(function () {
+              if ($wrapper.children(".swiper-slide").length < 8) {
+                $wrapper.append($(this).clone());
+              }
+            });
+          }
+        }
+
+        var swiper = new Swiper(this, {
+          loop: true,
+          speed: 650,
+          autoplay: false,
+          slidesPerView: "auto",
+          spaceBetween: 16,
+          grabCursor: true,
+          simulateTouch: true,
+          touchStartPreventDefault: false,
+          mousewheel: false,
+          freeMode: {
+            enabled: true,
+            sticky: false,
+            momentum: true,
+            momentumRatio: 0.35,
+          },
+          loopAdditionalSlides: 8,
+          loopedSlides: 8,
+          watchSlidesProgress: true,
+          watchSlidesVisibility: true,
+        });
       });
     }
   }
@@ -1005,7 +1069,9 @@
         28. ShowsDown Animation
  --------------------------------------------------------------*/
 
-  let divShowsDowns = gsap.utils.toArray(".anim_div_ShowDowns");
+  let divShowsDowns = gsap
+    .utils.toArray(".anim_div_ShowDowns")
+    .filter((showsDown) => !showsDown.closest(".swiper-wrapper"));
   divShowsDowns.forEach((showsDown) => {
     gsap.set(showsDown, {
       opacity: 0,
