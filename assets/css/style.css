@@ -243,7 +243,7 @@ h6 {
     margin: 0px 0px 20px 0px;
     font-weight: 700;
     line-height: 1.2em;
-    color: var(--heading-color);
+    color: var(--common-color-black);
 }
 
 .cs_primary_font {
@@ -4075,7 +4075,7 @@ input:-webkit-autofill {
     }
 
     .cs_nav .cs_nav_list>li:hover>ul {
-        top: 100%;
+        top: 92%;
         opacity: 1;
         visibility: visible;
         transition: all 0.4s ease;
@@ -8693,7 +8693,8 @@ a:hover {
 
 .insights .swiper-slide {
     padding: 0;
-    margin: 0 16px 0 0 !important;
+    margin: 0 16px 0 100;
+    
 }
 
 .insights .swiper-slide>div:hover {
