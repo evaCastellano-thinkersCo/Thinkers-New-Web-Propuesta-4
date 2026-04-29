@@ -4311,7 +4311,8 @@ input:-webkit-autofill {
         width: 30px;
         right: 20px;
         top: 5px;
-        padding: 20px 35px; /* FIXME: botón + menu hamburguesa */
+        padding: 20px 35px;
+        /* FIXME: botón + menu hamburguesa */
         cursor: pointer;
     }
 
@@ -6503,9 +6504,17 @@ a:hover {
     background-color: #fff;
 }
 
+/* TODO: sombra hover */
+
 .ejes-actuacion .cs_featured_case_item:hover,
-.insights .cs_featured_case_item:hover {
+.insights .cs_post:hover {
     box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.2);
+
+}
+
+.ejes-actuacion .cs_featured_case_item,
+.insights .cs_post,
+.insights .swiper-slide>div {
     transition: all linear 0.2s;
 }
 
@@ -8620,8 +8629,16 @@ a:hover {
 }
 
 .insights .cs_slider .cs_featured_case_item {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.insights .swiper-slide {
+    padding: 20px;
+}
+
+.insights .swiper-slide>div:hover {
+    box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.2);
 }
 
 .insights .cs_post.bg_accent {
@@ -8679,10 +8696,6 @@ a:hover {
     margin-bottom: 32px;
 }
 
-.contactar .cs_form {
-    background-color: #fff;
-    padding: 24px 24px 0;
-}
 
 .contactar .cs_field_group {
     padding-top: 28px;
@@ -8770,6 +8783,27 @@ label[for="politica-privacidad"] a:hover {
     background-color: var(--orange-100);
 }
 
+@media screen and (max-width: 991px) {
+    .contactar .cs_form {
+        margin: 0 15px;
+    }
+
+    .contactar .row {
+        justify-content: center;
+    }
+}
+
+.contactar form {
+    background-color: #fff;
+    padding: 24px 24px 0;
+}
+
+.columna{
+    padding: 0 16px;
+}
+
+/* 575 */
+
 /* Footer */
 
 .flex {
@@ -8782,7 +8816,7 @@ label[for="politica-privacidad"] a:hover {
 }
 
 .cs_footer .container {
-    margin: 0 80px;
+    margin: 0 auto;
     padding: 17px 0 60px;
 }
 
@@ -8836,8 +8870,12 @@ label[for="politica-privacidad"] a:hover {
 }
 
 @media screen and (max-width: 991px) {
-.cs_footer_nav {
-flex-direction: column;
-justify-content: center;
-}
+    .cs_footer_nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cs_footer .row{
+        flex-direction: column;
+    }
 }
