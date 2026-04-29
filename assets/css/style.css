@@ -218,7 +218,7 @@
 html,
 body,
 .dark {
-    color: var(--body-color);
+    color: var(--common-color-black);
     background-color: var(--drak-color);
     font-family: var(--body-font-family);
     font-size: 18px;
