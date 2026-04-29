@@ -281,19 +281,10 @@
     var $window = $(window);
     var lastScrollTop = 0;
     var $header = $(".cs_sticky_header");
-    var transparentThreshold = 100;
-    var headerHeight = Math.max($header.outerHeight() + 30, transparentThreshold);
+    var headerHeight = $header.outerHeight() + 30;
 
     $window.scroll(function () {
       var windowTop = $window.scrollTop();
-      $header.each(function () {
-        var $currentHeader = $(this);
-        if (!$currentHeader.hasClass("cs_header_no_transparency")) {
-          $currentHeader.toggleClass("cs_scrolled", windowTop > transparentThreshold);
-        } else {
-          $currentHeader.removeClass("cs_scrolled");
-        }
-      });
 
       if (windowTop >= headerHeight) {
         $header.addClass("cs_gescout_sticky");
