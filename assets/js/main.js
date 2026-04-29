@@ -425,46 +425,6 @@
         },
       });
     }
-    if ($.exists(".insights_drag_slider")) {
-      $(".insights_drag_slider").each(function () {
-        var $slider = $(this);
-        var $wrapper = $slider.find(".swiper-wrapper").first();
-        var $originalSlides = $wrapper.children(".swiper-slide").slice();
-
-        // Add enough real slides so the loop never shows empty gaps with short datasets.
-        if ($originalSlides.length && $originalSlides.length < 8) {
-          while ($wrapper.children(".swiper-slide").length < 8) {
-            $originalSlides.each(function () {
-              if ($wrapper.children(".swiper-slide").length < 8) {
-                $wrapper.append($(this).clone());
-              }
-            });
-          }
-        }
-
-        var swiper = new Swiper(this, {
-          loop: true,
-          speed: 650,
-          autoplay: false,
-          slidesPerView: "auto",
-          spaceBetween: 16,
-          grabCursor: true,
-          simulateTouch: true,
-          touchStartPreventDefault: false,
-          mousewheel: false,
-          freeMode: {
-            enabled: true,
-            sticky: false,
-            momentum: true,
-            momentumRatio: 0.35,
-          },
-          loopAdditionalSlides: 8,
-          loopedSlides: 8,
-          watchSlidesProgress: true,
-          watchSlidesVisibility: true,
-        });
-      });
-    }
   }
   /*-------------------------------------------------------------
        6. Isotop Initialize
