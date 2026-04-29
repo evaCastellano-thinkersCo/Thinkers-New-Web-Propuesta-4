@@ -8638,7 +8638,7 @@ a:hover {
 
 .insights .swiper-slide {
     padding: 0;
-    margin: 0;
+    margin: 0 16px 0 0 !important;
 }
 
 .insights .swiper-slide>div:hover {
@@ -8676,7 +8676,7 @@ a:hover {
 
 @media screen and (min-width: 767px) {
     .contactar {
-        padding: 120px 100px;
+        padding: 120px 0;
     }
 }
 
