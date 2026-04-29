@@ -229,7 +229,7 @@ body,
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: var(--gray-100);
 }
 
 h1,
@@ -4311,6 +4311,8 @@ input:-webkit-autofill {
         width: 30px;
         right: 20px;
         top: 5px;
+        padding: 20px 35px; /* FIXME: botón + menu hamburguesa */
+        cursor: pointer;
     }
 
     .cs_munu_dropdown_toggle:before,
@@ -8459,11 +8461,11 @@ a:hover {
 
 /* Saltos de linea */
 
-.border_top{
+.border_top {
     border-top: 1px solid var(--gray-200);
 }
 
-.border_bottom{
+.border_bottom {
     border-bottom: 1px solid var(--gray-200);
 }
 
@@ -8616,6 +8618,11 @@ a:hover {
     background-color: #fff;
 }
 
+.insights .cs_slider .cs_featured_case_item {
+  height: 100%;
+  width: 100%;
+}
+
 .insights .cs_post.bg_accent {
     background-color: var(--accent-color);
 }
@@ -8641,53 +8648,6 @@ a:hover {
 .insights .cs_m0 {
     font-weight: 300 !important;
     letter-spacing: -2%;
-}
-
-.insights .insights_drag_slider {
-    overflow: hidden;
-}
-
-.insights .insights_drag_slider .cs_featured_cases_grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0;
-    padding-bottom: 10px;
-}
-
-.insights .insights_drag_slider .swiper-slide {
-    height: auto;
-    flex: 0 0 auto;
-}
-
-.insights .insights_drag_slider .cs_featured_case_item {
-    width: 100%;
-}
-
-.insights .insights_drag_slider .cs_featured_case_link {
-    height: 100%;
-}
-
-@media screen and (min-width: 992px) {
-    .insights .insights_drag_slider .swiper-slide {
-        width: calc((100% - 32px) / 3);
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .insights .insights_drag_slider .swiper-slide {
-        width: calc((100% - 16px) / 2);
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .insights .insights_drag_slider .swiper-slide {
-        width: calc((100% - 16px) / 2);
-    }
-
-    .insights .insights_drag_slider .cs_featured_case_item {
-        flex: 0 0 auto;
-        width: 100%;
-    }
 }
 
 /* Contactar */
@@ -8761,6 +8721,21 @@ a:hover {
     border-color: var(--accent-color);
 }
 
+label[for="politica-privacidad"] {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-300);
+}
+
+label[for="politica-privacidad"] a {
+    color: var(--gray-300);
+    font-weight: 600;
+}
+
+label[for="politica-privacidad"] a:hover {
+    color: var(--accent-color);
+}
+
 .contactar button {
     width: 100%;
     margin: 40px 0 0 0;
@@ -8801,6 +8776,7 @@ a:hover {
 
 .cs_footer {
     border-top: 1px solid var(--gray-200);
+    background-color: var(--gray-100);
 }
 
 .cs_footer .container {
@@ -8810,12 +8786,13 @@ a:hover {
 
 @media screen and (max-width: 991px) {
     .cs_footer .container {
-    margin: 0 ;
-    padding: 10px;
-}
-.cs_footer .col:last-child {
-    text-align: start;
-}
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .cs_footer .col:last-child {
+        text-align: start;
+    }
 }
 
 .cs_footer .titulo {
@@ -8826,7 +8803,8 @@ a:hover {
     margin: 0;
 }
 
-.cs_footer .col ul, .cs_footer .col a {
+.cs_footer .col ul,
+.cs_footer .col a {
     list-style: none;
     font-weight: 600;
     font-size: 24px;
@@ -8837,9 +8815,9 @@ a:hover {
 }
 
 @media screen and (min-width: 991px) {
-.cs_footer .col:last-child {
-    text-align: end;
-}
+    .cs_footer .col:last-child {
+        text-align: end;
+    }
 }
 
 .cs_footer_nav {
@@ -8853,4 +8831,11 @@ a:hover {
     font-weight: 500;
     color: var(--common-color-black);
     text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+.cs_footer_nav {
+flex-direction: column;
+justify-content: center;
+}
 }
