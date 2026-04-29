@@ -353,18 +353,6 @@
         var $slider = $(this);
         var $wrapper = $slider.find(".swiper-wrapper").first();
         var $originalSlides = $wrapper.children(".swiper-slide").slice();
-
-        // Prevent empty/invisible gaps at the loop seam when there are few cards.
-        if ($slider.hasClass("anim_blog") && $originalSlides.length && $originalSlides.length < 9) {
-          while ($wrapper.children(".swiper-slide").length < 9) {
-            $originalSlides.each(function () {
-              if ($wrapper.children(".swiper-slide").length < 9) {
-                $wrapper.append($(this).clone());
-              }
-            });
-          }
-        }
-
         var isBlogSlider = $slider.hasClass("anim_blog");
 
         var swiper = new Swiper(this, {
