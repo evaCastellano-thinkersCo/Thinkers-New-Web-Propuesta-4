@@ -8500,6 +8500,7 @@ a:hover {
 }
 
 /* Seccion naranja */
+
 .seccion-naranja {
     background-color: var(--accent-color);
     padding: 0 80px;
@@ -8725,6 +8726,7 @@ label[for="politica-privacidad"] {
     font-size: 12px;
     font-weight: 400;
     color: var(--gray-300);
+    line-height: 120%;
 }
 
 label[for="politica-privacidad"] a {
