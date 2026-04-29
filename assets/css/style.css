@@ -8808,6 +8808,16 @@ a:hover {
     padding: 17px 0 60px;
 }
 
+@media screen and (max-width: 991px) {
+    .cs_footer .container {
+    margin: 0 ;
+    padding: 10px;
+}
+.cs_footer .col:last-child {
+    text-align: start;
+}
+}
+
 .cs_footer .titulo {
     text-transform: uppercase;
     color: var(--common-color-black);
@@ -8816,7 +8826,7 @@ a:hover {
     margin: 0;
 }
 
-.cs_footer .col ul {
+.cs_footer .col ul, .cs_footer .col a {
     list-style: none;
     font-weight: 600;
     font-size: 24px;
@@ -8826,8 +8836,10 @@ a:hover {
     padding-bottom: 8px;
 }
 
+@media screen and (min-width: 991px) {
 .cs_footer .col:last-child {
     text-align: end;
+}
 }
 
 .cs_footer_nav {
@@ -8840,4 +8852,5 @@ a:hover {
     font-size: 16px;
     font-weight: 500;
     color: var(--common-color-black);
+    text-align: center;
 }
