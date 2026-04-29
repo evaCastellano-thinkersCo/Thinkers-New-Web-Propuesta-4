@@ -3107,7 +3107,7 @@ input:-webkit-autofill {
     color: var(--common-color-white);
 }
 
-.cs_site_header{
+.cs_site_header {
     background-color: var(--gray-100);
 }
 
@@ -4054,7 +4054,7 @@ input:-webkit-autofill {
     }
 
     .cs_nav .cs_nav_list>li {
-        margin-right: 50px;
+        margin-right: 40px;
     }
 
     .cs_nav .cs_nav_list>li:last-child {
@@ -6459,6 +6459,7 @@ a:hover {
 .cs_post.cs_style_1 .cs_post_title {
     font-size: 32px;
     margin: 30px 0 16px 0;
+    font-weight: 600;
 }
 
 .cs_post_btn {
@@ -6486,11 +6487,69 @@ a:hover {
     padding-bottom: 10px;
 }
 
+/* TODO: que hacemos */
+
+
+@media screen and (min-width: 991px) {
+    .que-hacemos .cs_post {
+        display: flex;
+    }
+}
+
+.que-hacemos .cs_featured_cases_grid {
+    display: block;
+}
+
+.que-hacemos .cs_featured_case_item {
+    margin-bottom: 16px;
+}
+
+.que-hacemos .cs_post_thumb {
+    width: 416px;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.que-hacemos .cs_post_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media screen and (max-width: 991px) {
+    .que-hacemos .cs_post_thumb {
+        width: 100%;
+    }
+}
+
+.que-hacemos .cs_post_info {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 110%;
+}
+
+.que-hacemos .cs_post.cs_style_1 .cs_post_info p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.que-hacemos .cs_post_btn {
+    align-items: flex-end;
+}
+
+.que-hacemos .ejes-actuacion .subtitle {
+    font-size: 32px;
+    font-weight: 600;
+}
+
 .ejes-actuacion .subtitle,
 .insights .subtitle {
     color: var(--accent-color);
     font-size: 24px;
-
 }
 
 .ejes-actuacion .cs_featured_cases_grid .cs_featured_case_item:first-child,
@@ -6520,11 +6579,7 @@ a:hover {
     transition: all linear 0.2s;
 }
 
-/* TODO: que hacemos */
 
-.que-hacemos .cs_post{
-    display: flex;
-}
 
 .cs_featured_case_item {
     /* flex: 1 1 0; */
@@ -8802,7 +8857,7 @@ label[for="politica-privacidad"] a:hover {
     padding: 24px 24px;
 }
 
-.columna{
+.columna {
     padding: 0 16px;
 }
 
@@ -8879,7 +8934,7 @@ label[for="politica-privacidad"] a:hover {
         justify-content: center;
     }
 
-    .cs_footer .row{
+    .cs_footer .row {
         flex-direction: column;
     }
 }
