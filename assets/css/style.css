@@ -8993,6 +8993,10 @@ label[for="politica-privacidad"] a:hover {
     line-height: 120%;
 }
 
+.thinkers-detalle .listado .apartado {
+flex: 1;
+}
+
 /* tablet y ordenador */
 @media screen and (min-width: 767px) {
     .thinkers-detalle .listado {
