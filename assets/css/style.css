@@ -6444,6 +6444,9 @@ a:hover {
 
 .cs_post {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .cs_post.cs_style_1 .cs_post_thumb {
