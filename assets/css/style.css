@@ -6445,7 +6445,8 @@ a:hover {
 ----------------------------------------------------------------*/
 
 .cs_hero .cs_post,
-.casos .cs_post {
+.casos .cs_post,
+.insights .cs_post {
     position: relative;
 }
 
@@ -6474,7 +6475,8 @@ a:hover {
 }
 
 .cs_hero .cs_post_btn,
-.casos .cs_post_btn {
+.casos .cs_post_btn,
+.insights .cs_post_btn {
     position: absolute;
     bottom: 24px;
     right: 24px;
@@ -6498,7 +6500,8 @@ a:hover {
 }
 
 .cs_hero .cs_post_info,
-.casos .cs_post_info {
+.casos .cs_post_info,
+.insights .cs_post_info {
     padding-bottom: 72px;
 }
 
@@ -9139,7 +9142,7 @@ label[for="politica-privacidad"] a:hover {
 }
 
 .thinkers-detalle .bloque2 b {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 @media screen and (min-width: 1200px) {
@@ -9164,6 +9167,7 @@ label[for="politica-privacidad"] a:hover {
     font-size: 16px;
     font-weight: 300;
     line-height: 120%;
+    margin: 16px 0;
 }
 
 .thinkers-detalle .cs_text_style_body {
@@ -9208,4 +9212,8 @@ label[for="politica-privacidad"] a:hover {
     font-size: 24px;
     font-weight: 300;
     line-height: 110%;
+}
+
+.insights .subtitle{
+    margin-bottom: 24px;
 }
