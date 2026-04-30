@@ -9180,13 +9180,3 @@ label[for="politica-privacidad"] a:hover {
         margin-bottom: 24px;
     }
 }
-
-
-
-.thinkers-detalle .cs_featured_case_link:hover {
-    background-color: var(--gray-200);
-}
-
-.thinkers-detalle .cs_featured_case_link:active {
-    background-color: var(--gray-300);
-}
