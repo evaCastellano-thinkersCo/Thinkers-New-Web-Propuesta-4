@@ -6499,6 +6499,7 @@ a:hover {
 @media screen and (min-width: 991px) {
     .que-hacemos .cs_post {
         display: flex;
+        flex-direction: row;
     }
 }
 
