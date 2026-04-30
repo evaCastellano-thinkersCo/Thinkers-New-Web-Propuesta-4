@@ -6566,23 +6566,21 @@ a:hover {
     color: var(--common-color-black);
 }
 
-.ejes-actuacion .cs_featured_cases_grid .cs_featured_case_item {
+.cs_featured_cases_grid .cs_featured_case_item {
     background-color: #fff;
 }
 
-.ejes-actuacion .cs_featured_case_item:hover,
+.cs_featured_case_item:hover,
 .insights .cs_post:hover {
     box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.2);
 
 }
 
-.ejes-actuacion .cs_featured_case_item,
+.cs_featured_case_item,
 .insights .cs_post,
 .insights .swiper-slide>div {
     transition: all linear 0.2s;
 }
-
-
 
 .cs_featured_case_item {
     /* flex: 1 1 0; */
@@ -6650,7 +6648,7 @@ a:hover {
 
 .cs_post.cs_style_1 .cs_post_info p {
     font-size: 16px;
-    line-height: 110%;
+    line-height: 120%;
     font-weight: lighter;
     color: #161616;
 }
@@ -8759,7 +8757,8 @@ a:hover {
     margin-bottom: 8px;
 }
 
-.contactar h2 {
+.contactar h2,
+.thinkers-detalle .contactar h2 {
     font-size: 48px;
     margin-bottom: 32px;
 }
@@ -8964,8 +8963,7 @@ label[for="politica-privacidad"] a:hover {
 
 @media screen and (max-width: 1200px) {
 
-    .thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title,
-    .thinkers-detalle h1 {
+    .thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title {
         font-size: 48px;
     }
 }
@@ -9149,9 +9147,41 @@ label[for="politica-privacidad"] a:hover {
     margin: 0;
 }
 
+
 .thinkers-detalle .casos .cs_section_heading_text {
     margin-bottom: 48px;
+    width: 100%;
 }
+
+.thinkers-detalle .casos .titulo {
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 676px) {
+    .thinkers-detalle .casos .titulo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .thinkers-detalle .casos .titulo h2 {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 676px) {
+    .thinkers-detalle .casos .titulo {
+        width: 100%;
+    }
+
+    .thinkers-detalle .casos .titulo h2 {
+        margin-bottom: 24px;
+    }
+}
+
+
 
 .thinkers-detalle .cs_featured_case_link:hover {
     background-color: var(--gray-200);
