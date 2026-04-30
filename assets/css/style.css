@@ -8955,6 +8955,7 @@ label[for="politica-privacidad"] a:hover {
 .thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title {
     font-size: 64px;
     font-weight: 600;
+    margin-bottom: 24px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -9084,12 +9085,9 @@ label[for="politica-privacidad"] a:hover {
     margin: 0;
 }
 
-
-@media screen and (min-width: 1200px) {
-.thinkers-detalle .bloque3 .apartado {
-    width: 40%;
-}
-}
+    .thinkers-detalle .bloque3 .apartado {
+        width: 40%;
+    }
 
 .thinkers-detalle .bloque3 .numero {
     font-size: 12px;
