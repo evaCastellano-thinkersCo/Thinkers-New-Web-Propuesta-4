@@ -6474,7 +6474,9 @@ a:hover {
 }
 
 .casos .cs_post.cs_style_1 .cs_post_title {
-font-size: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 110%;
 }
 
 .cs_hero .cs_post_btn,
