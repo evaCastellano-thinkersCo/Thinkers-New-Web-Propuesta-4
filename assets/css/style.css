@@ -8737,6 +8737,7 @@ a:hover {
 
 /* Contactar */
 
+/* tablet y ordenador */
 @media screen and (min-width: 767px) {
     .contactar {
         padding: 120px 0;
@@ -8952,12 +8953,25 @@ label[for="politica-privacidad"] a:hover {
 
 /* Thinkers detalle */
 
-.thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title {
+.thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title,
+.thinkers-detalle h1 {
     font-size: 64px;
     font-weight: 600;
     margin-bottom: 24px;
 }
 
+
+
+@media screen and (max-width: 1200px) {
+
+    .thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title,
+    .thinkers-detalle h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* ordenador */
 @media screen and (min-width: 1200px) {
     .thinkers-detalle .subtitulo {
         display: flex;
@@ -8973,6 +8987,7 @@ label[for="politica-privacidad"] a:hover {
     margin: 0;
 }
 
+/* movil y tablet */
 @media screen and (max-width: 1200px) {
     .thinkers-detalle .subtitulo p {
         width: 100%;
@@ -8980,21 +8995,40 @@ label[for="politica-privacidad"] a:hover {
 
     .thinkers-detalle .subtitulo ul {
         padding: 0;
-        margin-top: 24px;
+        margin: 24px 0 0;
+        width: 100%;
+        line-height: 4px;
     }
+}
 
+@media screen and (min-width: 1200px) {
+    .thinkers-detalle .subtitulo ul {
+        width: 30%;
+
+    }
 }
 
 .thinkers-detalle .subtitulo ul {
     list-style: none;
-    width: 30%;
     font-size: 16px;
     font-weight: 300;
     line-height: 120%;
 }
 
+.thinkers-detalle .subtitulo li {
+    margin-bottom: 4px;
+}
+
+.thinkers-detalle .subtitulo li:last-child {
+    margin-bottom: 0;
+}
+
+.thinkers-detalle .cs_portfolio_detail_media {
+    margin: 48px 0;
+}
+
 .thinkers-detalle .listado .apartado {
-flex: 1;
+    flex: 1;
 }
 
 /* tablet y ordenador */
@@ -9002,7 +9036,7 @@ flex: 1;
     .thinkers-detalle .listado {
         display: flex;
         gap: 32px;
-        margin: 48px 0;
+        margin: 0 0 48px 0;
     }
 }
 
@@ -9020,15 +9054,6 @@ flex: 1;
 
 /* movil */
 @media screen and (max-width: 767px) {
-    .thinkers-detalle .listado {
-        margin-top: 48px;
-
-    }
-
-    .thinkers-detalle .listado h5 {
-        margin-bottom: 8px;
-    }
-
     .thinkers-detalle .listado p {
         margin-bottom: 32px;
     }
@@ -9039,6 +9064,7 @@ flex: 1;
     font-size: 16px;
     font-weight: 500;
     line-height: 110%;
+    margin-bottom: 8px;
 }
 
 .thinkers-detalle .listado p {
@@ -9054,12 +9080,14 @@ flex: 1;
     margin-bottom: 16px;
 }
 
+@media screen and (max-width: 1200px) {
+    .thinkers-detalle h2 {
+        font-size: 24px;
+    }
+}
+
 /* ordenador */
 @media screen and (min-width: 1200px) {
-    .thinkers-detalle .bloque2 {
-        width: 80%;
-    }
-
     .thinkers-detalle .bloque3 {
         display: flex;
         gap: 32px;
@@ -9089,9 +9117,15 @@ flex: 1;
     margin: 0;
 }
 
+.thinkers-detalle .bloque2 b {
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1200px) {
     .thinkers-detalle .bloque3 .apartado {
         width: 40%;
     }
+}
 
 .thinkers-detalle .bloque3 .numero {
     font-size: 12px;
@@ -9109,4 +9143,20 @@ flex: 1;
     font-size: 16px;
     font-weight: 300;
     line-height: 120%;
+}
+
+.thinkers-detalle .cs_text_style_body {
+    margin: 0;
+}
+
+.thinkers-detalle .casos .cs_section_heading_text {
+    margin-bottom: 48px;
+}
+
+.thinkers-detalle .cs_featured_case_link:hover {
+    background-color: var(--gray-200);
+}
+
+.thinkers-detalle .cs_featured_case_link:active {
+    background-color: var(--gray-300);
 }
