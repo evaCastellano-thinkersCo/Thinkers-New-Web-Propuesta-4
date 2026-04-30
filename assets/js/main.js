@@ -69,6 +69,7 @@
     lightGalleryInit();
     scrollUp();
     fullScreenSwiperSlider();
+    autoResizeTextarea();
   });
 
   $(window).on("scroll", function () {
@@ -82,7 +83,7 @@
     $(".cs_preloader").delay(150).fadeOut("slow");
   }
 
-/* FORMULARIO */
+  /* FORMULARIO */
 
   function initContactForm() {
     var form = document.getElementById("contact-form");
@@ -169,6 +170,18 @@
         status.innerText = "Error de conexión";
         console.error(err);
       }
+    });
+  }
+
+  /* textarea */
+  function autoResizeTextarea() {
+    const textarea = document.getElementById('detalles');
+
+    if (!textarea) return;
+
+    textarea.addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
     });
   }
 
@@ -1203,8 +1216,8 @@
     });
 
     const itemSplitted = new SplitText(splitTextLine2, {
-        type: "words",
-      }),
+      type: "words",
+    }),
       textNumWords = itemSplitted.words.length;
 
     gsap.delayedCall(0.05, function () {
