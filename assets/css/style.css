@@ -108,14 +108,13 @@
     --btn-secondary-color: #2A3138;
 
     --default-btn-tertiary: #ffffff00;
-    --hover-btn-tertiary: #F5F7FA;
-    --active-btn-tertiary: #E6EAF0;
+    --hover-btn-tertiary: var(--gray-200);
+    --active-btn-tertiary: var(--gray-300);
+
+    /* disabled: color de texto gray 400 sin fondo */
+
     --disabled-secondary: #C4CBD6;
-    --btn-tertiary-color: #2A3138;
-
-
-
-
+    --btn-tertiary-color: var(--common-color-black);
 }
 
 .dark {
@@ -6474,6 +6473,10 @@ a:hover {
     line-height: 100%;
 }
 
+.casos .cs_post.cs_style_1 .cs_post_title {
+font-size: 16px;
+}
+
 .cs_hero .cs_post_btn,
 .casos .cs_post_btn,
 .insights .cs_post_btn {
@@ -9214,6 +9217,6 @@ label[for="politica-privacidad"] a:hover {
     line-height: 110%;
 }
 
-.insights .subtitle{
+.insights .subtitle {
     margin-bottom: 24px;
 }
