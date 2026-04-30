@@ -279,9 +279,9 @@ h6 {
     font-size: 22px;
 }
 
-p {
+/* p {
     margin-bottom: 18px;
-}
+} */
 
 ul {
     margin: 0 0 25px 0;
@@ -582,6 +582,10 @@ textarea {
 
     .cs_height_60 {
         height: 60px;
+    }
+
+    .cs_height_64{
+        height: 64px;
     }
 
     .cs_height_65 {
