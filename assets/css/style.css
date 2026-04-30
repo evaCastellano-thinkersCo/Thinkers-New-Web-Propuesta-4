@@ -568,6 +568,10 @@ textarea {
         height: 45px;
     }
 
+    .cs_height_48 {
+        height: 48px;
+    }
+
     .cs_height_50 {
         height: 50px;
     }
@@ -4316,7 +4320,7 @@ input:-webkit-autofill {
         right: 20px;
         top: 5px;
         padding: 20px 35px;
-        /* FIXME: botón + menu hamburguesa */
+        /* FIXME: botón "+" menu hamburguesa */
         cursor: pointer;
     }
 
@@ -5071,7 +5075,6 @@ input:-webkit-autofill {
     background-color: rgba(255, 255, 255, 0.45);
 }
 
-/* FIXME: overlay blanco encima de la imagen de hero */
 .cs_hero.cs_style2 .cs_hero_bg::after {
     content: "";
     position: absolute;
@@ -7454,6 +7457,10 @@ a:hover {
     overflow: hidden;
 }
 
+.thinkers-detalle .cs_portfolio_details .cs_portfolio_detail_media {
+    aspect-ratio: 0;
+}
+
 .cs_portfolio_details .cs_portfolio_detail_media img {
     width: 100%;
     object-fit: cover;
@@ -8555,7 +8562,7 @@ a:hover {
 
 }
 
-@media screen and (min-width: 1211px) {
+@media screen and (min-width: 1200px) {
     .cs_nav_list .btn.btn_primary {
         margin: 0;
         padding: 14px 24px;
@@ -8694,7 +8701,7 @@ a:hover {
 .insights .swiper-slide {
     padding: 0;
     margin: 0 16px 0 100;
-    
+
 }
 
 .insights .swiper-slide>div:hover {
@@ -8838,9 +8845,12 @@ label[for="politica-privacidad"] a:hover {
     background-size: 12px 12px;
 }
 
-.contactar .checkbox input:hover,
-.contactar .checkbox input:checked:hover {
+.contactar .checkbox input:hover {
     background-color: var(--orange-100);
+}
+
+.contactar .checkbox input:checked:hover {
+    background-color: var(--accent-color);
 }
 
 @media screen and (max-width: 991px) {
@@ -8938,4 +8948,163 @@ label[for="politica-privacidad"] a:hover {
     .cs_footer .row {
         flex-direction: column;
     }
+}
+
+/* Thinkers detalle */
+
+.thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title {
+    font-size: 64px;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1200px) {
+    .thinkers-detalle .subtitulo {
+        display: flex;
+        gap: 48px;
+    }
+}
+
+.thinkers-detalle .subtitulo p {
+    width: 70%;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 110%;
+    margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .thinkers-detalle .subtitulo p {
+        width: 100%;
+    }
+
+    .thinkers-detalle .subtitulo ul {
+        padding: 0;
+        margin-top: 24px;
+    }
+
+}
+
+.thinkers-detalle .subtitulo ul {
+    list-style: none;
+    width: 30%;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%;
+}
+
+/* tablet y ordenador */
+@media screen and (min-width: 767px) {
+    .thinkers-detalle .listado {
+        display: flex;
+        gap: 32px;
+        margin: 48px 0;
+    }
+}
+
+/* movil y tablet */
+@media screen and (max-width: 1200px) {
+    .thinkers-detalle .listado {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .thinkers-detalle .listado p {
+        margin: 0;
+    }
+}
+
+/* movil */
+@media screen and (max-width: 767px) {
+    .thinkers-detalle .listado {
+        margin-top: 48px;
+
+    }
+
+    .thinkers-detalle .listado h5 {
+        margin-bottom: 8px;
+    }
+
+    .thinkers-detalle .listado p {
+        margin-bottom: 32px;
+    }
+}
+
+
+.thinkers-detalle .listado h5 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+.thinkers-detalle .listado p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%;
+}
+
+.thinkers-detalle h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 110%;
+    margin-bottom: 16px;
+}
+
+/* ordenador */
+@media screen and (min-width: 1200px) {
+    .thinkers-detalle .bloque2 {
+        width: 80%;
+    }
+
+    .thinkers-detalle .bloque3 {
+        display: flex;
+        gap: 32px;
+        margin-top: 48px;
+    }
+}
+
+/* movil y tablet */
+@media screen and (max-width: 1200px) {
+    .thinkers-detalle .bloque2 {
+        margin-bottom: 48px;
+    }
+
+    .thinkers-detalle .bloque3 p:last-child {
+        margin-bottom: 48px;
+    }
+
+    .thinkers-detalle .bloque3 .numero {
+        margin-bottom: 16px;
+    }
+}
+
+.thinkers-detalle .bloque2 p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%;
+    margin: 0;
+}
+
+
+@media screen and (min-width: 1200px) {
+.thinkers-detalle .bloque3 .apartado {
+    width: 40%;
+}
+}
+
+.thinkers-detalle .bloque3 .numero {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 110%;
+}
+
+.thinkers-detalle .bloque3 b {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+.thinkers-detalle .bloque3 p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%;
 }
