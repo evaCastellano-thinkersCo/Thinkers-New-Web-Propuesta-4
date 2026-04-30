@@ -283,9 +283,13 @@ h6 {
     margin-bottom: 18px;
 } */
 
+p {
+    margin: 0;
+}
+
 ul {
-    margin: 0 0 25px 0;
-    padding-left: 20px;
+    /* margin: 0 0 25px 0;
+    padding-left: 20px; */
     list-style: square outside none;
 }
 
@@ -584,7 +588,7 @@ textarea {
         height: 60px;
     }
 
-    .cs_height_64{
+    .cs_height_64 {
         height: 64px;
     }
 
@@ -2100,13 +2104,6 @@ label {
     color: var(--common-color-black);
 }
 
-.cs_section_heading.cs_style_1.cs_type_1 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .cs_section_heading.cs_style_1.cs_type_1 .cs_section_heading_text {
     max-width: 100%;
 }
@@ -2543,6 +2540,7 @@ label {
     background-color: var(--common-color-black);
     box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
+    color: var(--gray-400);
 }
 
 .cs_scrollup:hover {
@@ -6446,11 +6444,13 @@ a:hover {
   15. Posts
 ----------------------------------------------------------------*/
 
+.cs_hero .cs_post,
+.casos .cs_post {
+    position: relative;
+}
+
 .cs_post {
     padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .cs_post.cs_style_1 .cs_post_thumb {
@@ -6468,11 +6468,20 @@ a:hover {
 
 .cs_post.cs_style_1 .cs_post_title {
     font-size: 32px;
-    margin: 30px 0 16px 0;
+    margin: 24px 0 16px 0;
     font-weight: 600;
+    line-height: 100%;
 }
 
-.cs_post_btn {
+.cs_hero .cs_post_btn,
+.casos .cs_post_btn {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    margin-top: 0;
+}
+
+.que-hacemos .cs_post_btn {
     display: flex;
     justify-content: end;
     margin-top: 24px;
@@ -6486,6 +6495,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     border: 1px solid var(--gray-100);
+}
+
+.cs_hero .cs_post_info,
+.casos .cs_post_info {
+    padding-bottom: 72px;
 }
 
 
@@ -6543,9 +6557,10 @@ a:hover {
     line-height: 110%;
 }
 
-.que-hacemos .cs_post.cs_style_1 .cs_post_info p {
+.cs_post.cs_style_1 .cs_post_info p {
     font-size: 20px;
     font-weight: 300;
+    line-height: 120%;
 }
 
 .que-hacemos .cs_post_btn {
@@ -6657,7 +6672,6 @@ a:hover {
 .cs_post.cs_style_1 .cs_post_info p {
     font-size: 16px;
     line-height: 120%;
-    font-weight: lighter;
     color: #161616;
 }
 
@@ -8961,12 +8975,12 @@ label[for="politica-privacidad"] a:hover {
 /* Thinkers detalle */
 
 .thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title,
-.thinkers-detalle h1 {
+.thinkers-detalle h1,
+.casos .cs_section_heading.cs_style_1 .cs_section_title {
     font-size: 64px;
     font-weight: 600;
     margin-bottom: 24px;
 }
-
 
 
 @media screen and (max-width: 1200px) {
@@ -9188,4 +9202,10 @@ label[for="politica-privacidad"] a:hover {
     .thinkers-detalle .casos .titulo h2 {
         margin-bottom: 24px;
     }
+}
+
+.casos .subtitulo {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 110%;
 }
