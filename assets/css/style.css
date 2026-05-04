@@ -237,9 +237,8 @@ h3,
 h4,
 h5,
 h6 {
+    margin: 0;
     clear: both;
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
     font-weight: 700;
     line-height: 1.2em;
     color: var(--common-color-black);
@@ -8628,12 +8627,17 @@ a:hover {
     padding: 0 80px;
 }
 
+.seccion-naranja .container{
+    margin: 0;
+    padding: 0;
+}
+
 .seccion-naranja .cs_section_heading_text p {
     font-weight: 300;
 }
 
 .seccion-naranja .col-md-3.col-sm-12 {
-    padding-right: 50px;
+    padding-right: 130px;
     line-height: 100%;
 }
 
