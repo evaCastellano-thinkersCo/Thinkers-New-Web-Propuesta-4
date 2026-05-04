@@ -3771,7 +3771,7 @@ input:-webkit-autofill {
 
 .cs_site_header_full_width .container {
     max-width: 100%;
-    padding: 0 100px;
+    padding: 0 64px 0 80px;
 }
 
 .cs_site_header_style1 {
@@ -3922,7 +3922,7 @@ input:-webkit-autofill {
 }
 
 .cs_close:hover {
-    color: #ff6b00;
+    color: var(--accent-color);
     transform: scale(1.05);
 }
 
