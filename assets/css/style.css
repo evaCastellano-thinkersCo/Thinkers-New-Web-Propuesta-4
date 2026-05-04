@@ -9229,7 +9229,7 @@ label[for="politica-privacidad"] a:hover {
 }
 
 @media screen and (min-width: 676px) {
-    .thinkers-detalle .titulo {
+    .thinkers-detalle .casos .titulo {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
