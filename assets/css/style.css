@@ -6598,10 +6598,17 @@ a:hover {
 }
 
 .ejes-actuacion .subtitle,
-.insights .subtitle,
-.seccion-insights .bloque .subtitle {
+.insights .subtitle {
     color: var(--accent-color);
     font-size: 24px;
+}
+
+.seccion-insights .bloque .subtitle{
+    color: var(--accent-color);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 90%;
+    margin-bottom: 32px;
 }
 
 .seccion-insights h1{
