@@ -8634,10 +8634,6 @@ a:hover {
 
 .seccion-naranja .cs_section_heading_text p {
     font-weight: 300;
-}
-
-.seccion-naranja .col-md-3.col-sm-12 {
-    padding-right: 130px;
     line-height: 100%;
 }
 
@@ -8658,6 +8654,17 @@ a:hover {
 .seccion-naranja .cs_section_heading_text h3 {
     font-size: 48px;
     font-weight: 600;
+}
+
+@media screen and (min-width: 767px) {
+.seccion-naranja .container {
+    display: flex;
+    gap: 130px;
+}
+}
+
+.seccion-naranja .container .derecha{
+    width: 100%;
 }
 
 /* Aliados */
