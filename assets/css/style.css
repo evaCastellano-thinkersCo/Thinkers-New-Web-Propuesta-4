@@ -8768,8 +8768,8 @@ font-size: 20px;
     background-color: var(--accent-color);
 }
 
-.ejes-actuacion .subtitle,
-.insights .subtitle {
+.ejes-actuacion .title,
+.insights .title {
     color: var(--accent-color);
     font-size: 24px;
     margin-bottom: 18px;
