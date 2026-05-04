@@ -730,48 +730,61 @@
       17.Hero text Animation
  --------------------------------------------------------------*/
 
-  let HomeDigital = gsap.timeline({});
-  let mark = document.querySelector(".cs_hero .anim_banner_text_left");
-  let eting = document.querySelector(".cs_hero .anim_banner_text_right");
-  let cs_hero_style5_subtext = document.querySelector(".cs_hero .anim_subtext");
+ gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  let split_creatives = new SplitText(mark, {
+document.querySelectorAll(".anim_banner_text_left").forEach((mark) => {
+  let split = new SplitText(mark, {
     type: "chars,words",
   });
-  let split_solutions = new SplitText(eting, {
-    type: "chars,words",
-  });
-  let split_cs_hero_style5_subtext = new SplitText(cs_hero_style5_subtext, {
-    type: "chars words",
-  });
 
-  HomeDigital.from(split_creatives.chars, {
+  gsap.from(split.chars, {
     duration: 1.2,
     x: 100,
     autoAlpha: 0,
     stagger: 0.05,
+    scrollTrigger: {
+      trigger: mark,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
   });
-  HomeDigital.from(
-    split_solutions.chars,
-    {
-      duration: 1,
-      x: 100,
-      autoAlpha: 0,
-      stagger: 0.01,
-    },
-    "-=1"
-  );
+});
 
-  HomeDigital.from(
-    split_cs_hero_style5_subtext.words,
-    {
-      duration: 1,
-      x: 50,
-      autoAlpha: 0,
-      stagger: 0.05,
+document.querySelectorAll(".anim_banner_text_right").forEach((eting) => {
+  let split = new SplitText(eting, {
+    type: "chars,words",
+  });
+
+  gsap.from(split.chars, {
+    duration: 1,
+    x: 100,
+    autoAlpha: 0,
+    stagger: 0.01,
+    scrollTrigger: {
+      trigger: eting,
+      start: "top 80%",
+      toggleActions: "play none none none",
     },
-    "-=1"
-  );
+  });
+});
+
+document.querySelectorAll(".cs_hero .anim_subtext").forEach((el) => {
+  let split = new SplitText(el, {
+    type: "words",
+  });
+
+  gsap.from(split.words, {
+    duration: 1,
+    x: 50,
+    autoAlpha: 0,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: el,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+});
 
   /*--------------------------------------------------------------
             18. Text Typing Animation

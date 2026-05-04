@@ -6440,7 +6440,7 @@ a:hover {
   15. Posts
 ----------------------------------------------------------------*/
 
-.tarjetas-pequeñas .cs_featured_case_item {
+.tarjetas-pequeñas .cs_post {
     position: relative;
 }
 
@@ -6462,14 +6462,16 @@ a:hover {
 }
 
 .cs_post.cs_style_1 .cs_post_title {
-    font-size: 24px;
+    font-size: 32px;
     margin: 24px 0 16px 0;
     font-weight: 600;
     line-height: 100%;
 }
 
-.tarjetas-alargadas .cs_post.cs_style_1 .cs_post_title{
-    font-size: 32px;
+.cs_post.cs_style_1 .cs_post_title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 110%;
 }
 
 /* tarjetas pequeñas */
@@ -6484,9 +6486,10 @@ a:hover {
     padding-bottom: 72px;
 }
 
-/* tarjetas alargadas e insights de home */
-.tarjetas-alargadas .cs_post_btn,
-.insights .cs_post_btn {
+/* tarjetas alargadas e insights por algun motivo */
+.que-hacemos .cs_post_btn,
+.insights .cs_post_btn,
+.seccion-insights .cs_post_btn {
     display: flex;
     justify-content: end;
     margin-top: 24px;
@@ -6511,32 +6514,38 @@ a:hover {
 
 
 @media screen and (min-width: 991px) {
-    .tarjetas-alargadas .cs_post {
+    .que-hacemos .cs_post,
+    .seccion-insights .cs_post {
         display: flex;
         flex-direction: row;
     }
 }
 
-.tarjetas-alargadas .cs_featured_cases_grid {
+/* tarjetas alargadas */
+.que-hacemos .cs_featured_cases_grid,
+.seccion-insights .cs_featured_cases_grid {
     display: block;
 }
-
-.tarjetas-alargadas .cs_featured_case_item {
+/* tarjetas alargadas */
+.que-hacemos .cs_featured_case_item,
+.seccion-insights .cs_featured_case_item {
     margin-bottom: 16px;
 }
 
 .cs_featured_case_item:last-child {
     margin: 0;
 }
-
-.tarjetas-alargadas .cs_post_thumb {
+/* tarjetas alargadas */
+.que-hacemos .cs_post_thumb,
+.seccion-insights .cs_post_thumb {
     width: 416px;
     height: 100%;
     overflow: hidden;
     flex-shrink: 0;
 }
-
-.tarjetas-alargadas .cs_post_thumb img {
+/* tarjetas alargadas */
+.que-hacemos .cs_post_thumb img,
+.seccion-insights .cs_post_thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -6544,12 +6553,15 @@ a:hover {
 }
 
 @media screen and (max-width: 991px) {
-    .tarjetas-alargadas .cs_post_thumb {
+/* tarjetas alargadas */
+    .que-hacemos .cs_post_thumb,
+    .seccion-insights .cs_post_thumb {
         width: 100%;
     }
 }
-
-.tarjetas-alargadas .cs_post_info {
+/* tarjetas alargadas */
+.que-hacemos .cs_post_info,
+.seccion-insights .cs_post_info {
     padding: 0 24px;
     display: flex;
     flex-direction: column;
@@ -6563,14 +6575,22 @@ a:hover {
     line-height: 120%;
 }
 
-.tarjetas-alargadas .cs_post_btn {
+/* tarjetas alargadas */
+.que-hacemos .cs_post_btn,
+.seccion-insights .cs_post_btn {
     align-items: flex-end;
 }
-
-.tarjetas-alargadas .subtitle {
+/* tarjetas alargadas */
+.que-hacemos .ejes-actuacion .subtitle,
+.seccion-insights .bloque .subtitle {
     font-size: 32px;
     font-weight: 600;
+}
+/* tarjetas alargadas */
+.ejes-actuacion .subtitle,
+.insights .subtitle {
     color: var(--accent-color);
+    font-size: 24px;
     margin-bottom: 18px;
 }
 
@@ -6608,13 +6628,13 @@ a:hover {
 }
 
 .cs_featured_case_item:hover,
-.insights .swiper-slide:hover {
+.insights .cs_post:hover {
     box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.2);
+
 }
 
 .cs_featured_case_item,
 .insights .cs_post,
-.insights .swiper-slide,
 .insights .swiper-slide>div {
     transition: all linear 0.2s;
 }
@@ -6683,14 +6703,10 @@ a:hover {
     font-size: 16px;
 }
 
-.tarjetas-pequeñas .cs_post.cs_style_1 .cs_post_info p {
+.cs_post.cs_style_1 .cs_post_info p {
     font-size: 16px;
     line-height: 120%;
-    color: var(--common-color-black);
-}
-
-.tarjetas-alargadas .cs_post.cs_style_1 .cs_post_info p {
-font-size: 20px;
+    color: #161616;
 }
 
 .cs_post.cs_style_2 .cs_post_info .cs_section_heading_right {
@@ -8739,25 +8755,8 @@ font-size: 20px;
 
 .insights .swiper-slide {
     padding: 0;
-    margin-right: 16px !important;
-}
+    margin: 0 16px 0 100;
 
-@media screen and (min-width: 1200px) {
-.insights .swiper-wrapper {
-    padding-left: 120px;
-}
-}
-
-@media screen and (max-width: 767px) {
-.insights .swiper-wrapper {
-    padding-left: 0px;
-}
-}
-
-@media screen and (max-width: 1200px) {
-.insights .swiper-wrapper {
-    padding-left: 130px;
-}
 }
 
 .insights .swiper-slide>div:hover {
@@ -8766,13 +8765,6 @@ font-size: 20px;
 
 .insights .cs_post.bg_accent {
     background-color: var(--accent-color);
-}
-
-.ejes-actuacion .subtitle,
-.insights .subtitle {
-    color: var(--accent-color);
-    font-size: 24px;
-    margin-bottom: 18px;
 }
 
 .insights h2 {
@@ -8902,10 +8894,6 @@ label[for="politica-privacidad"] a:hover {
     transition: none;
 }
 
-.contactar input:-webkit-autofill {
-    -webkit-text-fill-color: var(--common-color-black);
-}
-
 .contactar .checkbox input:checked {
     background-color: var(--accent-color);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 8.5l3 3 7-7'/%3E%3C/svg%3E");
@@ -9023,7 +9011,7 @@ label[for="politica-privacidad"] a:hover {
 
 .thinkers-detalle .cs_section_heading.cs_style_1 .cs_section_title,
 .thinkers-detalle h1,
-.cs_section_heading.cs_style_1 .cs_section_title {
+.casos .cs_section_heading.cs_style_1 .cs_section_title {
     font-size: 64px;
     font-weight: 600;
     margin-bottom: 24px;
@@ -9252,7 +9240,7 @@ label[for="politica-privacidad"] a:hover {
     }
 }
 
-.descripcion {
+.casos .subtitulo {
     font-size: 24px;
     font-weight: 300;
     line-height: 110%;
