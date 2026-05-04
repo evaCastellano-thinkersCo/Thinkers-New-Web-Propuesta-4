@@ -4067,7 +4067,6 @@ input:-webkit-autofill {
     }
 
     .cs_nav .cs_nav_list>li>a {
-        padding: 10px 0;
         display: inline-flex;
         position: relative;
         height: inherit;
@@ -5439,11 +5438,11 @@ input:-webkit-autofill {
 ----------------------------------------------------------------*/
 
 .btn {
-    padding: 12px 24px;
+    padding: 12px 30px 12px 24px;
     display: inline-block;
     white-space: nowrap;
     border-radius: 0;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, padding-right 0.3s ease;
+    transition: all 0.3s ease;
     margin: 1rem 16px 1rem;
     border: 0;
 }
@@ -5559,12 +5558,8 @@ a:hover {
     margin-left: 16px;
 }
 
-.btn {
-    transition: all 0.3s ease;
-}
-
 .btn:hover {
-    margin-right: 8px;
+    padding-right: 22px;
 }
 
 
@@ -6601,6 +6596,7 @@ a:hover {
 .insights .subtitle {
     color: var(--accent-color);
     font-size: 24px;
+    margin-bottom: 18px;
 }
 
 .seccion-insights .bloque .subtitle{
@@ -8621,12 +8617,6 @@ a:hover {
 
 }
 
-@media screen and (min-width: 1200px) {
-    .cs_nav_list .btn.btn_primary {
-        padding: 14px 24px;
-    }
-}
-
 .cs_nav_list .activo {
     font-weight: 700;
 }
@@ -9247,8 +9237,4 @@ label[for="politica-privacidad"] a:hover {
     font-size: 24px;
     font-weight: 300;
     line-height: 110%;
-}
-
-.insights .subtitle {
-    margin-bottom: 24px;
 }
